@@ -1,1 +1,1 @@
-# Predicting-Heart-Disease-Using-ML-Algorithms
+# Predicting Heart Disease Using ML Algorithms
