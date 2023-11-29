@@ -1,6 +1,4 @@
-## Importing Libraries"
-
-```python
+# Importing Libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -12,3 +10,8 @@ from sklearn.metrics import classification_report
 from sklearn import tree
 from sklearn import linear_model
 import statsmodels.api as sm
+
+# Import Dataset
+t_df = pd.read_csv('heart_disease_dataset.csv')
+
+# Logistic Regression
