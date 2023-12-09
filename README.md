@@ -8,6 +8,9 @@ We employed various machine learning algorithms, including Logistic Regression, 
 
 ## Dataset Features
 The dataset features critical health indicators and demographics, such as high blood pressure, cholesterol levels, smoking status, diabetes, physical activity, dietary habits, alcohol consumption, healthcare access, mental and physical health, mobility difficulties, along with personal demographics like sex, age, education, and income.
+<p align="center">
+  <img width="674" alt="Dataset Features" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/6f3f25f4-3974-483f-bc5d-174bee048bb9">
+</p>
 
 ## Key Research Questions
 - What generalizations can we make about the surveyed population, and how do these influence the results?
@@ -24,14 +27,27 @@ Our research is particularly beneficial for healthcare facilities, medical profe
 - **Logistic Regression**: 
   - Identified stroke history, gender (males more prone), high blood pressure, high cholesterol, and poor general health as significant risk factors for heart disease.
   - Difficulty in climbing stairs was also significant but may be a symptom of other risk factors.
+<p align="center">
+  <img width="411" alt="Logistic Regression Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/5a691d77-7f09-4b59-9790-ff2239d0cc71">
+</p>
 
 - **Decision Trees**: 
   - Highlighted high blood pressure and high cholesterol as key predictors.
   - Healthcare-related attributes were less significant in direct risk but important in treatment and prevention strategies.
+<p align="center">
+  <img width="310" alt="Decision Tree Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/8d0b17f7-beff-4a1d-93b5-355de900e5ca">
+</p>
 
 - **Random Forest**: 
   - Achieved an accuracy of 90%, with the confusion matrix showing a substantial number of true positives.
   - Effectiveness of identified risk factors in predicting heart disease was underscored.
+<p align="center">
+  <img width="297" alt="Random Forest Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/a5768673-04a4-4c23-baa8-644715837028">
+</p>
+
+- **Naïve Bayes**:
+<p align="center">
+  <img width="295" alt="Naive Bayes Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/c0b87250-25d7-4703-89e2-dc8165c368fe"> </p>
 
 - **Model Comparison**: 
   - Logistic regression was most effective, with an accuracy of 90.9%.
