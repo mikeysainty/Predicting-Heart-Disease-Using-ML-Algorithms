@@ -25,33 +25,42 @@ Our research is particularly beneficial for healthcare facilities, medical profe
 ## Analysis and Findings
 
 - **Logistic Regression**: 
-  - Identified stroke history, gender (males more prone), high blood pressure, high cholesterol, and poor general health as significant risk factors for heart disease.
-  - Difficulty in climbing stairs was also significant but may be a symptom of other risk factors.
+  - High Accuracy: Exhibited an accuracy of 90.86%, indicating strong overall predictive performance.
+  - Low Recall: Demonstrated a low recall rate of 13.22%, suggesting it may miss a significant number of true positive cases (heart disease patients).
+  - Significant Variables: Analysis of coefficients and p-values indicated which health indicators are significant predictors in the model.
 <p align="center">
   <img width="411" alt="Logistic Regression Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/5a691d77-7f09-4b59-9790-ff2239d0cc71">
 </p>
 
 - **Decision Trees**: 
-  - Highlighted high blood pressure and high cholesterol as key predictors.
-  - Healthcare-related attributes were less significant in direct risk but important in treatment and prevention strategies.
+  - Moderate Accuracy: Achieved an accuracy of 85.18%, which is lower than Logistic Regression and Random Forest.
+  - Balanced Precision-Recall: More balanced precision (24.59%) and recall (28.49%) compared to other models, indicating a fair trade-off between false positives and false negatives.
+  - Varied Performance: Performance can vary greatly depending on the complexity of the tree and the depth of the nodes.
 <p align="center">
   <img width="310" alt="Decision Tree Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/8d0b17f7-beff-4a1d-93b5-355de900e5ca">
 </p>
 
 - **Random Forest**: 
-  - Achieved an accuracy of 90%, with the confusion matrix showing a substantial number of true positives.
-  - Effectiveness of identified risk factors in predicting heart disease was underscored.
+  - High Accuracy with Low Recall: Similar to Logistic Regression, it had high accuracy (90.40%) but suffered from low recall (11.72%).
+  - Robust Against Overfitting: Generally more robust against overfitting compared to a single Decision Tree due to ensemble learning.
+  - Complex Model: Involves multiple decision trees, making the model more complex and potentially harder to interpret.
 <p align="center">
   <img width="297" alt="Random Forest Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/a5768673-04a4-4c23-baa8-644715837028">
 </p>
 
 - **Naïve Bayes**:
+  - High Recall: Exhibited the highest recall (54.43%) among the models, indicating better identification of positive cases.
+  - Lower Accuracy: Lower accuracy (81.86%) compared to other models, with a higher rate of false positives.
+  - Fast and Efficient: Known for its simplicity and efficiency, particularly in large datasets.
 <p align="center">
   <img width="295" alt="Naive Bayes Results" src="https://github.com/mikeysainty/Predicting-Heart-Disease-Using-ML-Algorithms/assets/42102504/c0b87250-25d7-4703-89e2-dc8165c368fe"> </p>
 
 - **Model Comparison**: 
-  - Logistic regression was most effective, with an accuracy of 90.9%.
-  - Random Forest followed closely, while the SVM model showed limitations in classifying positive cases despite high accuracy.
+  - **Accuracy vs Recall Trade-off**: Logistic Regression and Random Forest models demonstrate high accuracy, making them suitable for applications where overall correctness is crucial. However, they have lower recall, which could be a drawback in scenarios where identifying all positive cases (like in medical diagnostics) is essential. In contrast, Naive Bayes, with its higher recall but lower accuracy, excels in identifying positive cases but at the cost of more false positives.
+  - **Complexity and Interpretability**: Decision Trees offer a balance between accuracy and recall and are relatively easy to interpret, but their performance can vary significantly. Random Forests, while more robust against overfitting than single Decision Trees, increase complexity and reduce interpretability due to their ensemble nature. Logistic Regression, on the other hand, provides a good balance between performance and interpretability.
+  - **Computational Efficiency**: Naive Bayes stands out for its computational efficiency, especially in large datasets. This makes it a practical choice for applications requiring fast processing times, despite its limitations in terms of accuracy.
+  - **Application Specificity**: The choice between these models is highly dependent on the specific requirements of the application. For instance, in medical diagnostics, missing a positive case (low recall) could be more detrimental than incorrectly identifying a negative case as positive (low precision).
+  - **Model Robustness**: Random Forests are generally more robust against overfitting compared to Decision Trees due to their ensemble approach. However, this robustness comes at the cost of increased computational resources and complexity.
 
 ## Conclusion
 
