@@ -1,1 +1,36 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+import statsmodels.api as sm
 
+# Logistic Regression model
+log_reg = LogisticRegression()
+log_reg.fit(X_train_scaled, y_train)
+y_pred_log_reg = log_reg.predict(X_test_scaled)
+
+# Evaluation metrics
+accuracy_log_reg = accuracy_score(y_test, y_pred_log_reg)
+precision_log_reg = precision_score(y_test, y_pred_log_reg)
+recall_log_reg = recall_score(y_test, y_pred_log_reg)
+f1_log_reg = f1_score(y_test, y_pred_log_reg)
+roc_auc_log_reg = roc_auc_score(y_test, y_pred_log_reg)
+
+# Confusion matrix
+conf_matrix_log_reg = confusion_matrix(y_test, y_pred_log_reg)
+
+# Model coefficients and p-values
+X_train_sm = sm.add_constant(X_train_scaled)  # Adding a constant column for statsmodels
+logit_model = sm.Logit(y_train, X_train_sm)
+result = logit_model.fit()
+p_values = result.summary2().tables[1]['P>|z|']
+coefficients = result.params
+
+# Results
+log_reg_metrics = {
+    'Accuracy': accuracy_log_reg,
+    'Precision': precision_log_reg,
+    'Recall': recall_log_reg,
+    'F1 Score': f1_log_reg,
+    'ROC AUC': roc_auc_log_reg
+}
+
+log_reg_metrics, conf_matrix_log_reg, coefficients, p_values
