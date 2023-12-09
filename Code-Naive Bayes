@@ -1,1 +1,27 @@
+from sklearn.naive_bayes import GaussianNB
 
+# Naive Bayes model
+naive_bayes = GaussianNB()
+naive_bayes.fit(X_train_scaled, y_train)
+y_pred_naive_bayes = naive_bayes.predict(X_test_scaled)
+
+# Evaluation metrics
+accuracy_naive_bayes = accuracy_score(y_test, y_pred_naive_bayes)
+precision_naive_bayes = precision_score(y_test, y_pred_naive_bayes)
+recall_naive_bayes = recall_score(y_test, y_pred_naive_bayes)
+f1_naive_bayes = f1_score(y_test, y_pred_naive_bayes)
+roc_auc_naive_bayes = roc_auc_score(y_test, y_pred_naive_bayes)
+
+# Confusion matrix
+conf_matrix_naive_bayes = confusion_matrix(y_test, y_pred_naive_bayes)
+
+# Results
+naive_bayes_metrics = {
+    'Accuracy': accuracy_naive_bayes,
+    'Precision': precision_naive_bayes,
+    'Recall': recall_naive_bayes,
+    'F1 Score': f1_naive_bayes,
+    'ROC AUC': roc_auc_naive_bayes
+}
+
+naive_bayes_metrics, conf_matrix_naive_bayes
