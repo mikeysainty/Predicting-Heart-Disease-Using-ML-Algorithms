@@ -1,1 +1,27 @@
+from sklearn.ensemble import RandomForestClassifier
 
+# Random Forest model
+rand_forest = RandomForestClassifier(random_state=42)
+rand_forest.fit(X_train_scaled, y_train)
+y_pred_rand_forest = rand_forest.predict(X_test_scaled)
+
+# Evaluation metrics
+accuracy_rand_forest = accuracy_score(y_test, y_pred_rand_forest)
+precision_rand_forest = precision_score(y_test, y_pred_rand_forest)
+recall_rand_forest = recall_score(y_test, y_pred_rand_forest)
+f1_rand_forest = f1_score(y_test, y_pred_rand_forest)
+roc_auc_rand_forest = roc_auc_score(y_test, y_pred_rand_forest)
+
+# Confusion matrix
+conf_matrix_rand_forest = confusion_matrix(y_test, y_pred_rand_forest)
+
+# Results
+rand_forest_metrics = {
+    'Accuracy': accuracy_rand_forest,
+    'Precision': precision_rand_forest,
+    'Recall': recall_rand_forest,
+    'F1 Score': f1_rand_forest,
+    'ROC AUC': roc_auc_rand_forest
+}
+
+rand_forest_metrics, conf_matrix_rand_forest
