@@ -1,1 +1,36 @@
+import pandas as pd
 
+# Load the dataset
+file_path = '/Heart_Disease_Health_Indicators_BRFSS2015.csv' # Change depending on where the dataset is saved
+data = pd.read_csv(file_path)
+
+# Display the first few rows of the dataset to understand its structure
+data.head()
+
+# Check for missing values in the dataset
+missing_values = data.isnull().sum()
+
+# Display the missing values if any
+missing_values[missing_values > 0]
+
+# Dataset does not have any missing values
+# Split the data into features (X) and the target variable (y)
+# Target variable is "HeartDiseaseorAttack" 
+# After splitting, divide the dataset into training and testing sets
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+
+# Preprocessing the data
+# Separate the features and the target variable
+X = data.drop('HeartDiseaseorAttack', axis=1)
+y = data['HeartDiseaseorAttack']
+
+# Splitting the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Scaling the features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
