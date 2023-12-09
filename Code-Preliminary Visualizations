@@ -1,1 +1,41 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Statistical Summary
+statistical_summary = data.describe()
+
+# Correlation Matrix
+correlation_matrix = data.corr()
+
+# Visualizing the Correlation Matrix using a Heatmap
+plt.figure(figsize=(12, 10))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title("Correlation Matrix of Heart Disease Dataset")
+plt.show()
+
+statistical_summary, correlation_matrix.head()
+
+# Setting up the plotting area for multiple plots
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 10))
+
+# Histogram for Age
+sns.histplot(data=data, x="Age", kde=True, ax=axes[0, 0], color='skyblue')
+axes[0, 0].set_title("Distribution of Age")
+
+# Histogram for BMI
+sns.histplot(data=data, x="BMI", kde=True, ax=axes[0, 1], color='orange')
+axes[0, 1].set_title("Distribution of BMI")
+
+# Bar Chart for Income Levels
+sns.countplot(x='Income', hue='HeartDiseaseorAttack', data=data, ax=axes[1, 0], palette="Set2")
+axes[1, 0].set_title("Income Levels vs Heart Disease Occurrence")
+axes[1, 0].legend(title='Heart Disease', loc='upper right')
+
+# Bar Chart for Education Levels
+sns.countplot(x='Education', hue='HeartDiseaseorAttack', data=data, ax=axes[1, 1], palette="Set1")
+axes[1, 1].set_title("Education Levels vs Heart Disease Occurrence")
+axes[1, 1].legend(title='Heart Disease', loc='upper right')
+
+plt.tight_layout()
+plt.show()
