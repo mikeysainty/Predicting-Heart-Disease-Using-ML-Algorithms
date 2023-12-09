@@ -5,7 +5,7 @@ file_path = '/Heart_Disease_Health_Indicators_BRFSS2015.csv' # Change depending 
 data = pd.read_csv(file_path)
 
 # Display the first few rows of the dataset to understand its structure
-data.head()
+print(data.head())
 
 # Check for missing values in the dataset
 missing_values = data.isnull().sum()
